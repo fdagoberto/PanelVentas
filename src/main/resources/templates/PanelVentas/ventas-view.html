@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Tiempo de refresco -->
+<meta http-equiv="refresh" content="600">
+
+	<title>Panel de ventas</title>
+	
+	<!--JQUERY-->
+	<script
+ 		src="https://code.jquery.com/jquery-3.3.1.min.js"
+ 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ 			crossorigin="anonymous"></script>
+	
+	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<!-- Los iconos tipo Solid de Fontawesome-->
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+	<!-- Nuestro css-->
+	<link rel="stylesheet" type="text/css" href="static/css/PanelVentas.css"
+		th:href="@{/css/PanelVentas.css}">
+		
+	<!-- DATA TABLE -->
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+	
+	
+</head>
+<body >
+ 
+ 
+    <form th:action="@{/PanelVentas}" method="Post"> 
+          
+                   
+    	<div  class="mx-auto col-sm-12 main-section">
+    	   	
+			<div class="card" >
+				<div class="card-header">
+					<h4>Panel de ventas </h4>
+					  <img src="static/img/logo.jpg" th:src="@{/img/logo.jpg}" align="right" style="max-width:5%;width:auto;height:auto;"/>
+																								
+					<input  type="date" id="fechaBusqueda" name="fechaBusqueda"  min="2020-01-01" max="2050-12-31">
+					<button type="submit"  class="btn btn-info">Buscar</button>					
+											
+				</div>
+				<div class="card-body"  >
+					<div th:include="PanelVentas/ventas.html" th:remove="tag"></div>
+				</div>
+			</div>
+			</div>
+		
+		
+					
+	  </form>   
+	  
+		
+	</body>
+</html>
