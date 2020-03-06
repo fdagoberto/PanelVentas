@@ -45,10 +45,10 @@ public class VMonitor implements Serializable {
 	private LocalDateTime FchRomaneo;
 	
 	@Column(name = "NroREMITO")
-	private Long NroRemito;
+	private String NroRemito;
 	
 	@Column(name = "FechaREMITO")
-	private Date FchRemito;
+	private LocalDateTime FchRemito;
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -86,11 +86,11 @@ public class VMonitor implements Serializable {
 		return FchRomaneo;
 	}
 
-	public Long getNroRemito() {
+	public String getNroRemito() {
 		return NroRemito;
 	}
 
-	public Date getFchRemito() {
+	public LocalDateTime getFchRemito() {
 		return FchRemito;
 	}
 
@@ -182,7 +182,7 @@ public class VMonitor implements Serializable {
 	}
 
 	public VMonitor(Long ordenId, LocalDate ordenFch, String ordenObs, String ordenNPedido, String ordenEstado,
-			Long idPickeo, String nroRomaneo, LocalDateTime fchRomaneo, Long nroRemito, Date fchRemito) {
+			Long idPickeo, String nroRomaneo, LocalDateTime fchRomaneo, String nroRemito, LocalDateTime fchRemito) {
 		super();
 		OrdenId = ordenId;
 		OrdenFch = ordenFch;
